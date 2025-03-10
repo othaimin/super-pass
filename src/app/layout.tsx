@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
-  variable: "--inter",
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
