@@ -1,6 +1,6 @@
 import React, { ButtonHTMLAttributes, FC, ReactNode } from 'react'
 import { cva, type VariantProps } from "class-variance-authority"
-import cn from 'classnames'
+import { cn } from '@/components/lib/utils'
 
 
 

@@ -1,5 +1,5 @@
-import cn from 'classnames'
-import React, { ButtonHTMLAttributes, FC, ReactNode } from 'react'
+import { cn } from '@/components/lib/utils'
+import React, { ButtonHTMLAttributes, FC } from 'react'
 type IconButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     Icon: () => React.JSX.Element
 }

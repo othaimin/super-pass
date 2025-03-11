@@ -5,7 +5,7 @@ type HeadingProps = {
 }
 const Heading: FC<HeadingProps> = ({ children, ...rest }) => {
     return (
-        <h1 className="font-bold text-2xl" >{children}</h1>
+        <h1 className="font-bold text-2xl" {...rest}>{children}</h1>
     )
 }
 

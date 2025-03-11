@@ -1,49 +1,104 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #110B1A;
-  --text: #ffffff;
-  --primary: #AE84E4;
-  --border: #AE84E420;
-  --foreground: #AE84E410;
+
+*:focus {
+  outline: none;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-text: var(--text);
-  --color-border: var(--border);
-  --color-primary: var(--primary);
-  --font-inter: var(--font-inter);
+input::placeholder {
+  color: #fff;
+  opacity: .3;
 }
 
-@layer utilities {
+html {
+  font-family: var(--font-inter)
+}
 
-  .card-content {
-    @apply flex flex-col justify-between items-center h-full gap-2;
+
+.card-content {
+  @apply flex flex-col justify-between items-center h-full gap-2;
+}
+
+.card-content>* {
+  width: 100%;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  border-radius: 100vh;
+  width: 10px;
+  background-clip: padding-box;
+
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #AE84E410;
+  border-radius: 100vh;
+  border: 4px solid rgba(0, 0, 0, 0);
+  width: 10px;
+
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #AE84E4;
+}
+
+/* 
+.animated {
+  transition: all .5s;
+}
+
+.animated.hide {
+  transform: translateY(24px) !important;
+  opacity: 0.001 !important;
+}
+
+.animated.init {
+  opacity: 0.001;
+  animation: show forwards;
+  transform: translateY(24px);
+  animation-duration: .5s;
+}
+
+@keyframes show {
+  to {
+    transform: translateY(0px);
+    opacity: 1;
   }
+} */
 
-  .scrollbar::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+.animated.hide {
+  transform: translateY(0px);
+  opacity: 1;
+  animation: hide forwards;
+  animation-duration: .3s;
+
+}
+
+.animated.show {
+  transform: translateY(24px);
+  opacity: 0.001;
+  animation: show forwards;
+  animation-duration: .3s;
+
+}
+
+@keyframes show {
+  to {
+    transform: translateY(0px);
+    opacity: 1;
   }
+}
 
-  .scrollbar::-webkit-scrollbar-track {
-    border-radius: 100vh;
-    width: 10px;
-    background-clip: padding-box;
-
-  }
-
-  .scrollbar::-webkit-scrollbar-thumb {
-    background: var(--foreground);
-    border-radius: 100vh;
-    border: 4px solid rgba(0, 0, 0, 0);
-    width: 10px;
-
-  }
-
-  .scrollbar::-webkit-scrollbar-thumb:hover {
-    background: var(--primary);
+@keyframes hide {
+  to {
+    transform: translateY(20px);
+    opacity: 0.001;
   }
 }
