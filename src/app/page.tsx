@@ -10,9 +10,10 @@ import EmailConfirmationSuccess from "@/components/screens/EmailConfirmationSucc
 import IconLogo from "@/components/Icon/IconLogo";
 import Heading from "@/components/Heading";
 import useScreen from "@/hooks/use-screen";
+import IconEyeHide from "@/components/Icon/IconEyeHide";
 
 export default function Home() {
-  const { activeScreen, screenToHidden, toggleScreen } = useScreen()
+  const { activeScreen, screenToHidden,isButtonDisabled, toggleScreen } = useScreen()
   const toggle = () => {
     const screen = activeScreen === "generatePassword" ? 'savedPasswords' : 'generatePassword'
 
@@ -30,9 +31,11 @@ export default function Home() {
           {activeScreen === 'savedPasswords' && <SavedPasswords screenToHidden={screenToHidden} toggleScreen={toggleScreen} />}
           {activeScreen === 'saveOnline' && <SaveOnline toggleScreen={toggleScreen} screenToHidden={screenToHidden} />}
           {activeScreen === 'confirmEmail' && <ConfirmEmail toggleScreen={toggleScreen} screenToHidden={screenToHidden} />}
-          {activeScreen === 'emailConfirmationSuccess' && <EmailConfirmationSuccess toggleScreen={toggleScreen} screenToHidden={screenToHidden} />}
+          {activeScreen === 'emailConfirmationSuccess' && <EmailConfirmationSuccess toggleScreen={toggleScreen} disabled={isButtonDisabled} screenToHidden={screenToHidden} />}
         </Card>
-        <Button variant='outline' onClick={toggle} >Show My Passwords <IconEyeView /></Button>
+        <Button variant='outline' onClick={toggle} disabled={isButtonDisabled} >
+          {activeScreen === 'savedPasswords'? <>Hide My Passwords <IconEyeHide /></>:<>Show My Passwords <IconEyeView /></>}
+          </Button>
       </div>
     </div>
   );

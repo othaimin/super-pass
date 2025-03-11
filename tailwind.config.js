@@ -11,6 +11,7 @@ module.exports = {
         primary: "#AE84E4",
         border: "#AE84E420",
         foreground: "#AE84E410",
+        
       },
       fontFamily: {
         inter: ['var(--font-inter)'],
