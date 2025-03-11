@@ -1,7 +1,7 @@
 import { useState } from "react"
 export type ScreensType = 'generatePassword' | 'savedPasswords' | 'saveOnline' | 'emailConfirmationSuccess' | 'confirmEmail' | null
 const useScreen = () => {
-    const [activeScreen, setActiveScreen] = useState<ScreensType>('confirmEmail')
+    const [activeScreen, setActiveScreen] = useState<ScreensType>('generatePassword')
     const [isButtonDisabled, setIsButtonDisabled] = useState(false)
     const [screenToHidden, setscreenToHidden] = useState<ScreensType>(null)
 
