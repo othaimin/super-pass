@@ -2,7 +2,6 @@
   "name": "super-pass",
   "version": "0.1.0",
   "private": true,
-  
   "homepage": "https://othaimin-super-pass.vercel.app/",
   "scripts": {
     "dev": "next dev",
@@ -12,10 +11,14 @@
   },
   "dependencies": {
     "@lottiefiles/dotlottie-react": "^0.13.2",
+    "@reduxjs/toolkit": "^2.6.1",
+    "copy-to-clipboard": "^3.3.3",
     "framer-motion": "^12.4.11",
     "next": "15.2.1",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-redux": "^9.2.0",
+    "react-toastify": "^11.0.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
