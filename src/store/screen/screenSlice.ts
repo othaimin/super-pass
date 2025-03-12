@@ -8,7 +8,7 @@ type screenSteteType = {
   isButtonDisabled: boolean;
 };
 const initialState: screenSteteType = {
-  activeScreen: "generatePassword",
+  activeScreen: "saveOnline",
   screenToHide: null,
   isButtonDisabled: false,
 };

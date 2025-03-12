@@ -1,6 +1,5 @@
 import Heading from "../Heading";
 import Button from "../Button";
-import IconLock from "../Icon/IconLock";
 import SavedPassword from "../SavedPassword";
 
 import ScrollBar from "../ScrollBar";
@@ -10,6 +9,7 @@ import useToggleScreen from "@/hooks/use-toggle-screen";
 import Icon from "../Icon";
 import { selectPasswords } from "@/store/passwords/passwordsSlice";
 import EmptyPasswords from "../EmptyPasswords";
+import IconSync from "../Icon/IconSync";
 
 const SavedPasswords = () => {
   const { toggleScreen, screenToHide } = useToggleScreen();
@@ -42,7 +42,7 @@ const SavedPasswords = () => {
           </ScrollBar>
           <Animated delays={[0.4, 0.1]} hide={hide}>
             <Button onClick={() => toggleScreen("saveOnline")}>
-              Save Onine <Icon Icon={IconLock} />
+              Sync Onine <Icon Icon={IconSync} />
             </Button>
           </Animated>
         </>

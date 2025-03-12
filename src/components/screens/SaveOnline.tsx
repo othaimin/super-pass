@@ -8,10 +8,23 @@ import IconSend from "../Icon/IconSend";
 import Animated from "../Animated";
 import useToggleScreen from "@/hooks/use-toggle-screen";
 import Icon from "../Icon";
-
 const SaveOnline = () => {
-  const { toggleScreen, screenToHide } = useToggleScreen();
+  const { screenToHide } = useToggleScreen();
   const hide = screenToHide === "saveOnline";
+
+  const sendEmail = async () => {
+    const response = await fetch("/api/send-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ to: "ossotch4@gmail.com" }),
+    });
+
+    const result = await response.json();
+    console.log(result.message);
+  };
+
   return (
     <div className="card-content !justify-center !gap-4">
       <Animated delays={[0.1, 0.4]} hide={hide}>
@@ -26,7 +39,7 @@ const SaveOnline = () => {
         <Input icon={IconEmail} placeholder="Enter your Emil" />
       </Animated>
       <Animated delays={[0.4, 0.1]} hide={hide}>
-        <Button onClick={() => toggleScreen("confirmEmail")}>
+        <Button onClick={sendEmail}>
           Send Code <Icon Icon={IconSend} />
         </Button>
       </Animated>
