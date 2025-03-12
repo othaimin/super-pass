@@ -29,15 +29,15 @@ const SavedPasswords = () => {
               if (index <= 5) {
                 return (
                   <Animated
+                    key={index}
                     delays={[0.1 + 0.1 * (index + 1), 0.8 - 0.1 - 0.1 * index]}
                     hide={hide}
-                    key={index}
                   >
-                    <SavedPassword title="Gmail" />
+                    <SavedPassword title={password.site} />
                   </Animated>
                 );
               }
-              return <SavedPassword title="Gmail" />;
+              return <SavedPassword title={password.site} key={index} />;
             })}
           </ScrollBar>
           <Animated delays={[0.4, 0.1]} hide={hide}>

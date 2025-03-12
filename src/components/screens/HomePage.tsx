@@ -58,13 +58,13 @@ export default function HomePage() {
             )
           }
         >
-          {activeScreen === "savedPasswords" ? (
+          {activeScreen === "generatePassword" ? (
             <>
-              Show Generator <Icon Icon={IconStars} />
+              Show My Passwords <Icon Icon={IconEyeView} />
             </>
           ) : (
             <>
-              Show My Passwords <Icon Icon={IconEyeView} />
+              Show Generator <Icon Icon={IconStars} />
             </>
           )}
         </Button>
