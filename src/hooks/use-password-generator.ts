@@ -1,9 +1,10 @@
 import Toast from "@/components/Toast";
 import PasswordStrengthTypes from "@/types/password-strength-types";
-import { toast } from "react-toastify";
+import { toast, ToastContent } from "react-toastify";
 import copy from "copy-to-clipboard";
 import { useAppDispatch } from "./store-hooks";
 import { setPassword } from "@/store/passwords/passwordsSlice";
+import IconCopy from "@/components/Icon/IconCopy";
 
 const usePasswordGenerator = () => {
   const dispatch = useAppDispatch();
@@ -39,7 +40,15 @@ const usePasswordGenerator = () => {
         site,
       })
     );
-    toast(Toast, { className: "w-fit p-0 !bg-transparent text-white" });
+    toast(
+      Toast({
+        text: "Password Copied to ClipBoard",
+        icon: IconCopy,
+      }) as ToastContent,
+      {
+        className: "w-fit p-0 !bg-transparent text-white",
+      }
+    );
   };
 
   return { passwordGenerator };

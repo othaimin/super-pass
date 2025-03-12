@@ -27,7 +27,7 @@ export default function HomePage() {
     <div className="bg-background select-none h-[100dvh] flex flex-col items-center justify-center font-inter text-text p-6">
       <ToastContainer
         transition={Zoom}
-        position="bottom-center"
+        position="top-center"
         closeButton={false}
         hideProgressBar
         autoClose={2000}
